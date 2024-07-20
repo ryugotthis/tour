@@ -110,18 +110,6 @@ const TourismRender = () => {
                 `
                   )
                   .join('')}
-                  <div class="view-pc" onclick="tourismLeft()">
-            <i
-              class="tourism-arrow-left fa-solid fa-angles-left fa-2xl"
-              ;"
-            ></i>
-          </div>
-          <div class="view-pc" onclick="tourismRight()">
-            <i
-              class="tourism-arrow-right fa-solid fa-angles-right fa-2xl"
-              ;"
-            ></i>
-          </div>
               </div>
             </div>
             
@@ -166,8 +154,11 @@ const TourismRender = () => {
                   .join('')}
               </div>
             </div>
+           
           </div>
+          
         </div>
+        
 
         <!-- 태블릿 뷰 -->
         <div class="col-md-12 d-none d-md-block d-lg-none">
@@ -249,7 +240,21 @@ const TourismRender = () => {
       </div>
     </div>
   `;
-
+  // 화살표버튼
+  // dataHTML += ` <!-- 좌우화살표 -->
+  //           <div class="view-pc" onclick="tourismLeft()">
+  //           <i
+  //             class="tourism-arrow-left fa-solid fa-angles-left fa-2xl"
+  //             ;"
+  //           ></i>
+  //         </div>
+  //         <div class="view-pc" onclick="tourismRight()">
+  //           <i
+  //             class="tourism-arrow-right fa-solid fa-angles-right fa-2xl"
+  //             ;"
+  //           ></i>
+  //         </div>`;
+  // dataHTML += ``;
   //팝업창
   dataHTML += `<div id="tourismPopup" class="hide layer">
   <div class="content">
@@ -261,12 +266,12 @@ const TourismRender = () => {
 function tourismLeft() {
   tourismNum =
     (tourismNum - 5 + TourismDataList.length) % TourismDataList.length;
-  tourismRender();
+  TourismRender();
 }
 
 function tourismRight() {
   tourismNum = (tourismNum + 5) % TourismDataList.length;
-  tourismRender();
+  TourismRender();
 }
 
 function tourismShowPopup(index) {
@@ -277,7 +282,9 @@ function tourismShowPopup(index) {
       <img src="${
         item.wr_link1 || 'https://via.placeholder.com/400x300'
       }" alt="Tourism Image" class="img-fluid mb-3">
+      <div class="content-background">
       <p>${item.wr_content}</p>
+      </div>
     </div>
   `;
   console.log('확인', popupContent);

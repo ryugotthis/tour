@@ -86,7 +86,7 @@ a:hover {
   /* background-attachment: fixed; */
   padding: 2%;
 
-  top: 20%;
+  top: 0%;
   left: 24%;
   width: 50%;
   /* height: 50%; */
@@ -100,14 +100,16 @@ a:hover {
 #tourismPopup .tourism-popup {
   /* width: 100%; */
 }
-#tourismPopup .content {
+#tourismPopup .content-background {
   background-color: white;
   padding: 30px;
   border-radius: 10px;
-  max-width: 80%;
-  max-height: 80%;
+  /* max-width: 80%; */
+  /* max-height: 80%; */
   overflow-y: auto;
-  color: #333;
+  color: black;
+  word-spacing: 3px;
+  font-size: small;
 }
 
 #tourismPopup.hide {
@@ -125,6 +127,10 @@ a:hover {
   #tourismPopup {
     width: 80%;
     left: 10%;
+  }
+  #tourismPopup .content-background {
+    padding: 3%;
+    font-size: 6px;
   }
   .tourism-mobile-arrow-left,
   .tourism-mobile-arrow-right {
